@@ -16,8 +16,8 @@
     \end{tabular} %
 }
 
-
-\title{April Camp 2017 Test 1 -- Solutions}
+\author{April Camp 2017}
+\title{Test 1 -- Solutions}
 \date{}
 
 \begin{document} \maketitle
@@ -36,7 +36,9 @@
 	\item 
 	\textit{Let $ABC$ be an acute angled triangle. Let $H$ be the foot of the altitude from $C$ onto $AB$. Suppose that $|AH|=3|BH|$. Let $M$ and $N$ be the midpoints of the segments $AB$ and $AC$ respectively. Let $P$ be a point such that $|NP|=|NC|$ and $|CP|=|CB|$ and such that $B$ and $P$ lie on opposite sides of the line $AC$. Show that $\angle APM = \angle PBA$.}
 	
+	{\centering \includegraphics[width=0.9\textwidth]{T1Q2.eps}}
 	
+	Note that since $HB =\frac{1}{4}AB =\frac{1}{2}MB$ and $CH \perp MB$, $CH$ is the perpendicular bisector of $MB$ and so $CM=CB=CP$. Thus $P$, $B$ and $M$ lie on a circle centred at $C$, which we call $\Gamma$. Also, since $N$ is the midpoint of $AC$ and $NC=NP$, $P$ lies on the with diameter $AC$, centred at $N$. So $AP \perp PC$, and so $AP$ is tangent to $\Gamma$. Thus by the tan-chord theorem, $\angle APM =\angle PBM =\angle PBA$.
 	
 	\item
 	\textit{Consider a $4 \times 4$ grid of unit squares. How many ways are there to write a 0 or 1 in each $1 \times 1$ square so that the product of the two numbers written on every neighbouring pair of squares (sharing a common edge) is always 0?}
@@ -96,7 +98,7 @@ of $0$'s contained in the central $2 \times 2$ subgrid of squares.
 
 \begin{enumerate}
 
-    \item[Case 1:] Four $0$'s: \grid{0}{0}{0}{0} \\
+    \item[Case 1:] Four $0$'s: \grid{0}{0}{0}{0}
         
         Consider the ring of $12$ squares surrounding the central $2 \times
         2$ subgrid. The board as a whole is valid precisely when these $12$
@@ -104,7 +106,7 @@ of $0$'s contained in the central $2 \times 2$ subgrid of squares.
         are thus $F_{11} + F_{13} = 89 + 233 = 322$ valid grids in this case.
 
     \item[Case 2:] Three $0$'s: \grid{0}{0}{0}{1} \grid{0}{0}{1}{0}
-        \grid{0}{1}{0}{0} \grid{1}{0}{0}{0} \\
+        \grid{0}{1}{0}{0} \grid{1}{0}{0}{0}
 
         In this case, the squares on the border adjacent to the central square
         with a $1$ in must contain $0$'s. The square on the border which shares
@@ -116,7 +118,7 @@ of $0$'s contained in the central $2 \times 2$ subgrid of squares.
         grids, giving us $178 \times 4 = 712$ valid configurations in this
         case.
 
-    \item[Case 3:] Two $0$'s: \grid{0}{1}{1}{0} \grid{1}{0}{0}{1} \\
+    \item[Case 3:] Two $0$'s: \grid{0}{1}{1}{0} \grid{1}{0}{0}{1}
 
         The squares on the border adjecent to the $1$'s must be filled with
         $0$'s. The squares on the border sharing a corner with the $1$'s can be

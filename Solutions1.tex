@@ -16,8 +16,9 @@
 	\end{tabular} %
 }
 
-\author{April Camp 2017}
-\title{Test 1 -- Solutions}
+\newcommand{\floor}[1]{\ensuremath{\left\lfloor #1 \right\rfloor}}
+
+\title{April Camp 2017 Test 1 -- Solutions}
 \date{}
 
 \begin{document} \maketitle
@@ -155,8 +156,72 @@ Combining the above three cases, we find that the total number of valid $4
 	\item [(b)] there are infinitely many positive integers $n$ such that $$\{1, 2, \dots, n\} = \{a_1, a_2, \dots, a_n \}.$$
 	\end{itemize}}
 	
-	
-	
+    Note that the sequence $(a_n)$ defined by $a_n = n$ for all positive natural
+    numbers $n$ satisfy the conditions posed in the problem. We will show
+    that it is the only such sequence.
+
+    For convenience, define the function $f : \mathbb{N} \longrightarrow
+    \mathbb{N}$ by $f(n) = a_n$. The following observations are easy to prove:
+    \begin{enumerate}
+    \item $f(1) = 1$.
+    \item The function $f$ is bijective.
+    \item A positive integer $n$ is prime if and only if $f(n)$ is prime.
+    \item If
+        \[
+            n = p_1^{a_1} p_2^{a_2} \dots p_k^{a_k}
+        \]
+        is the unique prime factorisation of $n$, then
+        \[
+            f(n) = {f(p_1)}^{a_1} {f(p_2)}^{a_2} \dots {f(p_k)}^{a_k}
+        \]
+        is the unique prime factorisation of $f(n)$.
+    \item For any natural numbers $m$ and $n$, $f(m) \mid f(n)$ if and only if
+        $m \mid n$.
+    \end{enumerate}
+
+    We now show that for every prime number $p$, that $f(p) = p$. The result
+    then follows by the above observations.
+
+    Consider any prime number $p$. Then there is a unique prime number $q$
+    such that $a_q = p$. For any natural number $N$, we have that there are
+    \[
+        \floor{\frac{N}{p}}
+    \]
+    multiples of $p$ among the natural numbers $\{1, 2, \ldots, N\}$.
+
+    On the other hand, the multiples of $p$ among the numbers $\{a_1, a_2,
+    \ldots, a_N\}$ are precisely the numbers divisible by $a_q$, which are
+    precisely the numbers $a_m$ where $1 \leq m \leq N$ and $q \mid m$. Thus
+    there are
+    \[
+        \floor{\frac{N}{q}}
+    \]
+    multiples of $p$ among the natural numbers $\{a_1, a_2, \ldots, a_N\}$.
+
+    Since there are infinitely many natural numbers $N$ such that
+    \[
+        \{a_1, a_2, \ldots, a_N\} = \{1, 2, \ldots, N\}
+    \]
+    it follows that there are infinitely many natural numbers $N$ such that
+    \[
+        \floor{\frac{N}{p}} = \floor{\frac{N}{q}}.
+    \]
+
+    But this is only possible if $p=q$. Suppose, for example, that $p<q$.
+    Then for
+    \[
+        N > \frac{pq}{q-p},
+    \]
+    we have that $Nq > Np + pq$, and so
+    \[
+        \floor{\frac{N}{p}} \geq \frac{N}{p} > \frac{N}{q} + 1 >
+        \floor{\frac{N}{q}}.
+    \]
+
+    A similar proof shows that it is not possible to have $p > q$. We find
+    that $f(p)=p$ for all primes $p$, and so $f(n)=n$ for all positive natural
+    numbers $n$.
+
 \end{enumerate}
 
 \end{document}

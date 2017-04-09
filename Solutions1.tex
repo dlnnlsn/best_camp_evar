@@ -1,7 +1,8 @@
-\documentclass[a4paper,12pt, titlepage]{article}
+\documentclass[a4paper,12pt]{article}
 
 \usepackage[pdftex]{graphicx}
 \usepackage{amsmath,amsfonts,amsthm}
+\usepackage{fullpage}
 
 \newtheorem{lemma}{Lemma}
 
@@ -14,6 +15,7 @@
         \hline %
     \end{tabular} %
 }
+
 
 \title{April Camp 2017 Test 1 -- Solutions}
 \date{}
@@ -132,7 +134,19 @@ Combining the above three cases, we find that the total number of valid $4
 	\item 
 	\textit{Find all functions $f:\mathbb{R} \rightarrow \mathbb{R}$ satisfying $$f(xy-1)+f(x)f(y) = 2xy - 1$$ for all $x,y \in \mathbb{R}$.}
 	
+	We call the above equation Rosa. Note that if $f$ is a constant function, then the left-hand side of Rosa is constant as $x$ and $y$ vary, while the right-hand side is obviously not. Hence $f$ is nonconstant. Putting $y=0$ in Rosa, we see that $f(-1) +f(0)f(x) = -1$ for all $x\in\mathbb{R}$. Since $f$ is nonconstant, we must have that $f(0)=0$, and consequently $f(-1) = -1$. Also, putting $x=y=1$ in Rosa we get that $f(1)^2 = 1$, so $f(1) = 1$ or $f(1) = -1$.
 	
+	Now putting $y = -1$ in Rosa we get that $-2x-1 = f(-x-1) +f(x)(f-1) = f(-x-1)-f(x)$, putting $y=1$ in Rosa we get that $f(x-1) +f(1)f(x) = 2x-1$, and putting $y=x$ in Rosa we get that $f(x^2-1) +f(x)^2 = 2x^2-1$.
+	\begin{align*} \text{Now } f(z)f(y) &= 2zy-1-f(zy-1) = 2(-zy)(-1) -1 -f((-zy)(-1)-1) \\ &= f(-zy)f(-1) = -f(-zy) \quad \text{ for all } z,y\in\mathbb{R}.\end{align*}
+	Putting $z=x-1$ and $y=-x-1$ in this equation, we get that
+	\begin{align*} f(x-1)f(-x-1) &= -f(x^2-1) \\
+		\iff [2x-1-f(1)f(x)] [f(x)-2x-1] &= -[2x^2-1-f(x)^2] = f(x)^2 -2x^2 +1.
+	\end{align*}
+	Now if $f(1)=1$, this equation becomes \begin{align*} f(x)^2 -2x^2 +1 &= (1+2x-f(x))(1-2x+f(x)) \\ &= 1 -(2x-f(x))^2 = 1 -4x^2 +4xf(x) -f(x)^2 \\ \iff 0 &= 2x^2 -4xf(x) -2f(x)^2 = -2(f(x)-x)^2 \\ f(x) &= x \quad \text{for all } x\in\mathbb{R}. \end{align*}
+	On the other hand, if $f(1) = -1$, the equation becomes
+	\begin{align*} f(x)^2 -2x^2 +1 &= (f(x)-1-2x)(f(x)-1+2x) \\ &= (f(x)-1)^2 -(2x)^2 = f(x)^2-2f(x)+1-4x^2 \\ \iff 2f(x) &= -2x^2 \\ \iff f(x) &= -x^2 \quad \text{for all } x\in\mathbb{R}. \end{align*}
+	
+	So we see that $f(x)=x$ and $f(x)-x^2$ are the only possible solutions. Now it remains to check that both of these are valid solutions by plugging them into Rosa. For $f(x)=x$, $f(xy-1) +f(x)f(y) = xy-1-xy = 2xy-1$, so the solution checks. For $f(x)=-x^2$, $f(xy-1) +f(x)f(y) = -(xy-1)^2 +(-x^2)(-y^2) = -x^2y^2 +2xy -1 +x^2y^2 = 2xy-1$, so this solution also checks. Hence all the possible solutions to this functional equation are $f(x)=x$ for all $x\in\mathbb{R}$ and $f(x)=-x^2$ for all $x\in\mathbb{R}$.
 	
 	\item
 	\textit{Find all infinite sequences $a_1, a_2, a_3 \dots $ of positive integers such that

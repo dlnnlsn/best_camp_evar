@@ -24,42 +24,42 @@
 	\textit{Nonzero real numbers $a,b,c,d$ satisfy the equations \[a+b+c+d = 0, \qquad \frac{1}{a}+\frac{1}{b}+\frac{1}{c}+\frac{1}{d}+\frac{1}{abcd} = 0.\]
 	Find all possible values of the product $(ab-cd)(c+d)$.}
 	
-	
+	Clearing denominators in equation two, we get $abc +bcd +cda +dab = -1$. Hence \begin{align*} (ab-cd)(c+d) &= abc +abd -cd(c+d) \\ &= -bcd -cda -1 -cd(c+d) \\ &= -1 -cd(a+b+c+d) = -1.\end{align*}
 	
 	\item
 	\textit{Find all primes $p$ such that $5^p +4p^4$ is the square of an integer.}
 	
 Suppose that $5^p + 4p^2 = k^2$. Then we have that
 \[
-    (k - 2p^2)(k + 2p^2) = 5^p,
+	(k - 2p^2)(k + 2p^2) = 5^p,
 \]
 and so both $(k - 2p^2)$ and $(k + 2p^2)$ are powers of $5$. Let
 \begin{align*}
-    k - 2p^2 & = 5^a & & \text{and} & k + 2p^2 & = 5^b.
+	k - 2p^2 & = 5^a & & \text{and} & k + 2p^2 & = 5^b.
 \end{align*}
 
 Then we have that
 \[
-    4p^2 = 5^b - 5^a.
+	4p^2 = 5^b - 5^a.
 \]
 
 We clearly have that $5^b > 5^a$, and so this expression is divisible by $5^a$.
 If $a > 0$, then we see that $4p^2$ is divisible by $5$, and hence $p=5$.
 We have that
 \[
-    5^5 + 4\cdot 5^4 = 5^4 (5 + 4) = (5^2 \cdot 3)^2,
+	5^5 + 4\cdot 5^4 = 5^4 (5 + 4) = (5^2 \cdot 3)^2,
 \]
 and so $p=5$ is a solution.
 
 We now consider the case where $a=0$. In this case, we have that $b=p$, and so
 we find that
 \[
-    5^p = 4p^2 + 1.
+	5^p = 4p^2 + 1.
 \]
 
 However, one can prove by induction that
 \[
-    5^n > 4n^2 + 1
+	5^n > 4n^2 + 1
 \]
 for all $n > 1$, and so we have no solutions in this case.
 	

@@ -18,6 +18,30 @@
 	\item 
 	\textit{For an integer $N>0$, $N$ boys, no two of them having the same height, are arranged in a circle. A boy in the given arrangement is said to be \emph{tall} if he is taller than both of his neighbours; a boy is said to be \emph{short} if he is shorter than both of his neighbours. Prove that the number of tall boys in the circle is equal to the number of short boys in the circle.}
 	
+    Consider any arbitrary arrangement of the boys along the circle. We put the
+    signs ``+" or ``-" before each boy in accordance with the following rule:
+    we move clockwise along the circle, and put the sign ``+" before the boy if
+    he is taller than the previous boy, and we put the sign ``-" if he is
+    shorter than the previous one.
+
+    It is evident that a boy is tall if and only if the sign ``+" stands before
+    him, and the sign ``-" stands after him. Similarly, a boy is short if and
+    only if the sign ``-" stands before him, and the sign ``+" stands after
+    him. (Note that the tallest of the $N$ boys is tall, so both the signs
+    ``+" and ``-" exist in every configuration.)
+
+    Therefore the number of tall boys in the arrangement is equal to the number
+    of alternations of ``+" and ``-", and the number of short boys is equal
+    to the number of alternations of ``-" and ``+". Regarding all
+    successive ``+" signs as a single ``+" sign, and all successive ``-" signs
+    as a single ``-" sign, we construct a new arrangement of signs. It is easy
+    to see that the number of alternations of ``+" and ``-" in the initial
+    arrangement is equal to the number of alternations of ``+" and ``-" in the
+    new arrangments, and similarly for the number of alternations of ``-" and
+    ``+". But it is evident that the number of alternations of ``+" and ``-" in
+    the new arrangement is equal to the number of alternations of ``-" and
+    ``+", and so the numbers of tall boys and of short boys in the
+    arrangement are equal.
 	
 		
 	\item 
@@ -66,7 +90,30 @@ for all $n > 1$, and so we have no solutions in this case.
 	\item 
 	\textit{$ABCD$ is a cyclic quadrilateral. Let the circle $\Gamma_1$ pass through $A$ and $B$ and touch $CD$ at $E$; let the circle $\Gamma_2$ pass through $B$ and $C$ and touch $DA$ at $F$; let the circle $\Gamma_3$ pass through $C$ and $D$ and touch $AB$ at $G$; and let the circle $\Gamma_4$ pass through $D$ and $A$ and touch $BC$ at $H$. Prove that $EG \perp FH$.}
 	
-	
+    {\centering \includegraphics[width=0.9\textwidth]{T2Q4.eps} }
+    
+    If the quadrilateral $ABCD$ has a pair of parallel sides, the result follows
+    from the symmetry of the construction. So we suppose that $ABCD$ is not a
+    trapezoid or a rectangle.
+
+    Let $X = BC \cap AD$. Since $\Gamma_2$ touches $AD$ at point $F$, we have
+    that $XF^2 = XB \cdot XC$.
+
+    Similarly, $XH^2 = XA \cdot XD$. Since $ABCD$ is cyclic, we have that
+    $XB \cdot XC = XA \cdot XD$, and so $XF = XH$, and hence $\triangle XHF$ is
+    an isosceles triangle. Thus $\angle BHF = \frac{1}{2} (180^\circ - \angle
+    CXD) = \frac{1}{2}(\angle C + \angle D)$.
+
+    Similarly, $\angle BGE = \frac{1}{2} (\angle A + \angle D)$.
+
+    Let $GE \cap HF = Y$. Then $\angle GYH = 360^\circ - \left(\angle B +
+        \frac{1}{2} (\angle C + \angle D) + \frac{1}{2} (\angle A + \angle
+        D)\right) = 360^\circ - (\angle B + \angle D) - \frac{1}{2} (\angle A +
+    \angle C)$.
+
+    Since $\angle A + \angle C = \angle B + \angle D = 180^\circ$, we have
+    $\angle GYH = 360^\circ - 180^\circ - 90^\circ = 90^\circ$, and so $EG
+    \perp FH$.
 	
 	\item
 	\textit{Given a polynomial $P$ with positive real coefficients, show that $P(1)P(xy) \geq P(x)P(y)$ for all $x,y \geq 1$.}

@@ -37,9 +37,17 @@
 	
 	
 	\item
-	\textit{Given a polynomial $P$ with positive real coefficients, prove that $P(1)P(xy) \geq P(x)P(y)$ for all $x,y \geq 1$.}
+	\textit{Given a polynomial $P$ with positive real coefficients, show that $P(1)P(xy) \geq P(x)P(y)$ for all $x,y \geq 1$.}
 	
+	Let the polynomial $P$ be $P(t) = a_n t^n +a_{n-1} t^{n-1} +\dotsb +a_1 t +a_0$ where the $a_i$ are positive.
 	
+	\textbf{Solution 1:} Note that the sequences $(x^n, x^{n-1}, \dotsc, x, 1)$ and $(y^n, y^{n-1}, \dotsc, y, 1)$ are both decreasing. Hence by the weighted version of Chebyshev's Inequality with weights $w_i = a_i/(a_n+a_{n-1}+\dotsb+a_1+a_0)$,
+	\begin{align*}
+		&\mspace{24mu} \frac{a_n x^ny^n +a_{n-1}x^{n-1}y^{n-1} +\dotsb +a_1 xy +a_0}{a_n+a_{n-1} +\dotsb +a_1 +a_0} \\ &\geq \frac{a_n x^n +a_{n-1}x^{n-1} +\dotsb +a_1 x +a_0}{a_n+a_{n-1} +\dotsb +a_1 +a_0} \frac{a_n y^n +a_{n-1}y^{n-1} +\dotsb +a_1 y +a_0}{a_n+a_{n-1} +\dotsb +a_1 +a_0} \\
+		\mspace{-36mu} \iff P(1)P(xy) &= \left(a_n +\dotsb +a_1 +a_0\right) \left(a_n(xy)^n +\dotsb +a_1 xy +a_0\right) \\ &\geq \left(a_nx^n +\dotsb +a_1 x +a_0\right) \left(a_ny^n +\dotsb +a_1 y +a_0\right) \\ &= P(x)P(y)
+	\end{align*}
+	\textbf{Solution 2:} Let $x = e^s$ and $y = e^t$ where $s,t \geq 0$. We use H\"older's Inequality twice with the sequence $P = (a_n e^{n(s+t)}, a_{n-1} e^{(n-1)(s+t)}, \dotsc, a_1 e^{s+t}, a_0)$ and the sequence $A = (a_n, a_{n-1}, \dotsc, a_1, a_0)$. First we use it with exponents $s/(s+t)$ for $P$ and $t/(s+t)$ for $A$, giving \begin{align*} P(xy)^{s/(s+t)} P(1)^{t/(s+t)} &= P\!\left(e^{s+t}\right)^{s/(s+t)} P(1)^{t/(s+t)} \\ &= \left(a_n e^{n(s+t)} +\dotsc +a_0\right)^{s/(s+t)} \left(a_n +\dotsc +a_0\right)^{t/(s+t)} \\ &\geq a_n e^{ns} +\dotsc +a_0 = P(e^s) = P(x)\end{align*} and then with exponents $t/(s+t)$ for $P$ and $s/(s+t)$ for $A$, giving \begin{align*} P(xy)^{t/(s+t)} P(1)^{s/(s+t)} &= P\!\left(e^{s+t}\right)^{t/(s+t)} P(1)^{s/(s+t)} \\ &= \left(a_n e^{n(s+t)} +\dotsc +a_0\right)^{t/(s+t)} \left(a_n +\dotsc +a_0\right)^{s/(s+t)} \\ &\geq a_n e^{nt} +\dotsc +a_0 = P(e^t) = P(y).\end{align*}
+	Multiplying these inequalities of positive numbers together, we get that \[P(xy)P(1) = P(xy)^{s/(s+t)} P(1)^{t/(s+t)} \times P(xy)^{t/(s+t)} P(1)^{s/(s+t)} \geq P(x) P(y),\] as desired.
 
 \end{enumerate}
 

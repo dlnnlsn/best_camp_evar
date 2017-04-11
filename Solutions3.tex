@@ -1,7 +1,7 @@
 \documentclass[a4paper,12pt]{article}
 
 \usepackage[pdftex]{graphicx}
-\usepackage{amsmath,amsfonts,amsthm}
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
 \usepackage{fullpage}
 
 \newtheorem{lemma}{Lemma}
@@ -32,13 +32,13 @@
 	
 	\item
 	\textit{Prove that for every prime $p$, there exists an integer $x$ such that \[x^8 \equiv 16 \pmod p.\]}
-	
-	
+	Assume that $p$ is a prime such that no integer $x$ satisfies $p \mid x^8-16$. Note that $p$ is odd, since otherwise $p=2$ and $x=0$ would be a solution. So for each integer $x$, \[p \nmid x^8-16 = (x^4-4)(x^4+4) = (x^2-2)(x^2+2) (x^2-2x+2)(x^2+2x+2)\] \[\iff p \nmid x^2-2,\quad p \nmid x^2+2,\quad p \nmid x^2-2x+2,\quad \text{and} \quad p \nmid x^2+2x+2.\]
+	Since these four relations hold for all values of $x$, the first two give that $2$ and $-2$ are not quadratic residues modulo $p$. Thus $-1$ is a quadratic residue modulo $p$. However, since $p \nmid x^2-2x+2 = (x-1)^2+1$ for all integer $x$, $-1$ is not a quadratic residue modulo $p$. This is a contradiction, and so no such $p$ exists.
 	
 	\item 
-	\textit{Let $n > 3$ be an integer. John and Mary play the following game: First John labels the sides of a regular $n$-gon with the numbers $1, 2, \dotsc, n$ in whatever order he wants, using each number exactly once. Then Mary divides this $n$-gon into triangles by drawing $n − 3$ diagonals which do not intersect each other inside the n-gon. All these diagonals are labeled with number 1. Into each of the triangles the product of the numbers on its sides is written. Let $S$ be the sum of those $n − 2$ products.
+	\textit{Let $n > 3$ be an integer. John and Mary play the following game: First John labels the sides of a regular $n$-gon with the numbers $1, 2, \dotsc, n$ in whatever order he wants, using each number exactly once. Then Mary divides this $n$-gon into triangles by drawing $n − 3$ diagonals which do not intersect each other inside the n-gon. All these diagonals are labeled with number 1. Into each of the triangles the product of the numbers on its sides is written. Let $S$ be the sum of those $n − 2$ products.}
 	
-Determine the value of $S$ if Mary wants the number $S$ to be as small as possible and John wants $S$ to be as large as possible and if they both make the best possible choices.}
+	\textit{Determine the value of $S$ if Mary wants the number $S$ to be as small as possible and John wants $S$ to be as large as possible and if they both make the best possible choices.}
 	
 	
 

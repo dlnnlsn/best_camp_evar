@@ -18,9 +18,10 @@
 	\item 
 	\textit{Given $5$ positive real numbers, show that there exist two of them,
 	$a$ and $b$, for which \[0 \leq \frac{a}{1+a^2} - \frac{b}{1+b^2} \leq \frac{1}{8}.\]}
+	For all real $x$, define $f(x) = \frac{x}{1+x^2}$. By the AM-GM Inequality, if $x$ is positive then $x \leq \frac{1+x^2}{2} \iff 0 < f(x) \leq \frac{1}{2}$.
 	
+	So let $a,b,c,d$ and $e$ be the five positive real numbers in question. Then $v=f(a)$, $w=f(b)$, $x=f(c)$, $y=f(d)$ and $z=f(e)$ are five real numbers between $0$ and $\frac{1}{2}$. Without loss of generality let $v\leq w\leq x\leq y\leq z$. Now if the difference between any two of them is greater than $\frac{1}{8}$, then $z-v = (z-y) + (y-x) + (x-w) + (w-v) > \frac{1}{8}+\frac{1}{8}+\frac{1}{8}+\frac{1}{8} = \frac{1}{2}$, which is impossible since $z-v \leq \frac{1}{2}-0 = \frac{1}{2}$. Hence some two of $f(a), f(b), f(c), f(d)$ and $f(e)$ differ by at most $\frac{1}{8}$, and the result is proved.
 	
-		
 	\item 
 	\textit{An acute-angled triangle $ABC$ is given. Points $D$, $E$, and $F$ lie
 	on the sides $BC$, $CA$, and $AB$ respectively, and satisfy $\angle

@@ -29,19 +29,32 @@
 	orthocenter of triangle $DEF$ coincides with the circumcenter of
 	triangle $ABC$.}
 	
-	
+	Let $H$ be the orthocentre of $\Delta DEF$, and let the feet of the perpendiculars from $E$ and $F$ onto $DF$ and $ED$ be $Y$ and $Z$, respectively. Now since $HYDZ$ is cyclic, $\angle EHF = \angle YHZ = 180^\circ - \angle ZDY = \angle EDF = \angle BAC = \angle FAE$. Thus $FAEH$ is cyclic, and similarly $ECDH$ and $DBFH$ are cyclic. Thus $\angle CBH = \angle DBH = \angle DFH = \angle DFZ = 90^\circ - \angle ZDF = 90^\circ - \angle EDY = \angle YED = \angle HED = \angle HCD = \angle HCB$, and so $\Delta BHC$ is isosceles with $HB=HC$. Similarly $HA=HB=HC$ and so $H$ is the circumcentre of $\Delta ABC$.
 	
 	\item
-	\textit{Prove that for every prime $p$, there exists an integer $x$ such that \[x^8 \equiv 16 \pmod p.\]}
+	\textit{Prove that for every prime $p$, there exists an integer $x$ such that $p\mid x^8-16$.}
+	
 	Assume that $p$ is a prime such that no integer $x$ satisfies $p \mid x^8-16$. Note that $p$ is odd, since otherwise $p=2$ and $x=0$ would be a solution. So for each integer $x$, \[p \nmid x^8-16 = (x^4-4)(x^4+4) = (x^2-2)(x^2+2) (x^2-2x+2)(x^2+2x+2)\] \[\iff p \nmid x^2-2,\quad p \nmid x^2+2,\quad p \nmid x^2-2x+2,\quad \text{and} \quad p \nmid x^2+2x+2.\]
 	Since these four relations hold for all values of $x$, the first two give that $2$ and $-2$ are not quadratic residues modulo $p$. Thus $-1$ is a quadratic residue modulo $p$. However, since $p \nmid x^2-2x+2 = (x-1)^2+1$ for all integer $x$, $-1$ is not a quadratic residue modulo $p$. This is a contradiction, and so no such $p$ exists.
 	
 	\item 
-	\textit{Let $n > 3$ be an integer. John and Mary play the following game: First John labels the sides of a regular $n$-gon with the numbers $1, 2, \dotsc, n$ in whatever order he wants, using each number exactly once. Then Mary divides this $n$-gon into triangles by drawing $n − 3$ diagonals which do not intersect each other inside the n-gon. All these diagonals are labeled with number 1. Into each of the triangles the product of the numbers on its sides is written. Let $S$ be the sum of those $n − 2$ products.}
+	\textit{Let $n > 3$ be an integer. Tim and Ralph play the following game: First Tim labels the sides of a regular $n$-gon with the numbers $1, 2, \dotsc, n$ in whatever order he wants, using each number exactly once. Then Ralph divides this $n$-gon into triangles by drawing $n-3$ diagonals which do not intersect each other inside the n-gon. All these diagonals are labeled with number 1. Into each of the triangles the product of the numbers on its sides is written. Let $S$ be the sum of those $n-2$ products.}
 	
-	\textit{Determine the value of $S$ if Mary wants the number $S$ to be as small as possible and John wants $S$ to be as large as possible and if they both make the best possible choices.}
+	\textit{Find the value of $S$ if Ralph wants the number $S$ to be as small as possible and Tim wants $S$ to be as large as possible and if they both make the best possible choices.}
 	
+	For $n = 3$ the answer is 6. Suppose $n > 4$. It is obvious that in each triangulation there are at least two triangles that share two sides with the polygon. We will prove that it is always best for Ralph to choose a triangulation for which there is no more than two triangles of this kind.
 	
+	We call a triangle in a triangulation bad if all of its sides are diagonals of the polygon. First we prove that Ralph can choose an optimal triangulation that contains no bad triangles. Assume on the contrary that every optimal triangulation contains a bad triangle. For an optimal triangulation $T$ let $d(T)$ be the length of the smallest side of all bad triangles in $T$. Among all optimal triangulations with minimal number of bad triangles let $T_0$ be such that $d(T_0)$ is minimal. Consider a bad triangle $ABC$ in $T_0$ such that $|AB| = d(T_0)$. Let $ABD$ be the other triangle of $T_0$ that contains $AB$ as one of its sides. Since $D$ lies on the arc $AB$ of the circumcircle of $ABC$ that does not contain $C$ and $\angle ACB$ is acute, we have $|AD| < |AB|$ and $|BD| < |AB|$.
+	
+	Let $T_1$ be the triangulation obtained from $T_0$ by replacing $AB$ with $CD$. If the sides $AD$ and $BD$ have labels $a$ and $b$ respectively, then $S(T_1)-S(T_0) = a+b-ab-1 = -(a-1)(b-1) \leq 0$. Because $T_0$ is an optimal triangulation, we conclude that $T_1$ is also optimal. Since $T_0$ has the minimal number of bad triangles at least one of the segments $AD$ and $BD$ should be a diagonal, but then $d(T_1)$ is less than $d(T_0)$ which is a contradiction.
+	
+	Now that we know that Ralph can choose an optimal triangulation that contains no bad triangles, we easily conclude that in a such triangulation there are exactly two triangles that share two sides with the polygon. If we denote by $x_1$ (respectively $x_2$) the number of triangles that have exactly one (respectively two) of their sides being the sides of the polygon, then $x_1 + x_2 = n-2$ and $x_1 + 2x_2 = n$, so $x_2 = 2$.
+	
+	Ralph’s strategy is to choose these two triangles so that the side of the polygon labeled with $1$ is contained in one of these triangles and the side labeled with $2$ is contained in the other. By this strategy Ralph ensures that \begin{align*} S &\leq \frac{n(n+1)}{2} -(1+2+n+n-1) +\max\left\{1\cdot n +2\cdot (n-1), 1\cdot (n-1) +2\cdot n\right\} \\ &= \frac{n^2+3n-6}{2}.\end{align*}
+	
+	On the other hand, Tim can force Ralph to achieve exactly this bound by labeling the sides of the polygon in the following order: $1, n-1, 4, n-3, 5, \dotsc, n-2, 3, n, 2$.
+	
+	Thus the answer to our problem is $S = \frac{n^2+3n-6}{2}$, for each $n\geq 3$.
 
 \end{enumerate}
 

@@ -22,7 +22,7 @@
 	
 	Now $0 \equiv_3 9^{p^2} -29^p +m \equiv_3 -(-1)^p+m = 1+m$ since $p$ is odd, so $m\equiv_3 -1$. Also, $0 \equiv_5 9^{p^2} -29^p +m \equiv_5 (-1)^{p^2} -(-1)^p +m = m$ since $p$ and $p^2$ are odd, so $m\equiv_5 0$. Finally, $0\equiv_7 9^{p^2} -29^p +m \equiv_7 2^{p^2} -1^p +m = 2^{p^2}-1+m$. Now since $p>3$ is prime, $3\nmid p$ and so $p^1 = 3k+1$ for some $k\in\mathbb{Z}$. Thus $2^{p^2} = 2\cdot 8^k \equiv_7 2$, and so $m\equiv_7 -1$.
 	
-	Now our three congruences for $m$ can be combined into one using the method of the Chinese Remainder Theorem. Alternatively, note that $3$, $5$ and $7$ all divide $m-20$, and so $m\equiv_105 20$. So the smallest positive integer value for $m$ is $m=20$.
+	Now our three congruences for $m$ can be combined into one using the method of the Chinese Remainder Theorem. Alternatively, note that $3$, $5$ and $7$ all divide $m-20$, and so $m\equiv_{105} 20$. So the smallest positive integer value for $m$ is $m=20$.
 	
 	\item
 	\textit{Determine all functions $f: \mathbb{R}\to\mathbb{R}$ such that for all $x,y\in\mathbb{R}$, $$f(xf(x)+f(xy)) = f(x^2) +yf(x).$$}
@@ -39,7 +39,7 @@
 	
 	On the other hand we can estimate the lowest possible number of same-colour pairs in each row. Suppose that a row contains $k$ red and $m-k$ blue squares. Then the number of same-colour pairs is equal to $\binom{k}{2} + \binom{m-k}{2}$. This number can be bounded below by using the Quadratic-Arithmetic Means Inequality:
 	\begin{align*} \binom{k}{2}+\binom{m-k}{2} &= \frac{k(k-1)}{2} +\frac{(m-k)(m-k-1)}{2} = \frac{k^2+(m-k)^2}{2} -\frac{m}{2} \\ &\geq \left(\frac{k+m-k}{2}\right)^2 -\frac{m}{2} = \frac{m(m-2)}{4}. \end{align*}
-	Since the number of possible same-coloured pairs is at least as large as the total number of same-colour pairs in all the rows combined and we have bounded the number of same-colour pairs from below, we have $m(m-1) \geq m\cdot m(m-2)/4 \iff 0 \geq m^2-6m+4 \Rightarrow m \leq 5$ since $m$ is an integer.
+	Since the number of possible same-coloured pairs is at least as large as the total number of same-colour pairs in all the rows combined and we have bounded the number of same-colour pairs from below, we have $m(m-1) \geq m\cdot m(m-2)/4$ $\iff 0 \geq m^2-6m+4 \Rightarrow m \leq 5$ since $m$ is an integer.
 	
 	When $m = 5$ the lower bound from above has the value of $\frac{m(m-2)}{4} = \frac{15}{4} > 3$. This means that any colouring will create at least 4 same-colour pairs in each row. Since the number of possible pairs is $m(m-1) = 20$ and there are $5$ rows, each row has to contain exactly $4$ same-colour pairs. This can only happen when the row contains $3$ squares of one colour and $2$ squares of the other colour. Altogether we have to use all of the $10$ red pairs and all of the $10$ blue pairs. But the number of rows is odd. So, the number of squares of one colour will have to be greater than the number of squares of the other colour and the same will be true for the number of red pairs and the number of blue pairs. Hence, the $5 \times 5$ array cannot be coloured as desired.
 	
@@ -48,6 +48,12 @@
 	\item %SL 2004
 	\textit{In a cyclic quadrilateral $ABCD$, let $E$ be the intersection of $AD$ and $BC$ (so that $C$ is between $B$ and $E$), and $F$ be the intersection of $AC$ and $BD$. Let $M$ be the midpoint of side $CD$, and let $N\neq M$ be a point on the circumcircle of $\Delta ABM$ such that $\frac{AM}{MB}=\frac{AN}{NB}$. Show that $E$, $F$ and $N$ are collinear.}
 	
+	To start with, note that point N is uniquely determined by the imposed properties. Indeed, $f(X) = AX/BX$ is a monotone function on both arcs $AB$ of the circumcircle of $\Delta ABM$. Denote by $P$ and $Q$ respectively the second points of intersection of the line $EF$ with the circumcircles of $\Delta ABE$ and $\Delta ABF$. The problem is equivalent to showing that $N \in PQ$. In fact, we shall prove that $N$ coincides with the midpoint $\bar{N}$ of segment $PQ$.
+	
+	\begin{center}\includegraphics{T4Q4.eps}\end{center}
+	
+	The quadrilaterals $APBE$, $AQBF$, and $ABCD$ are cyclic. This implies that $\angle APE = \angle ABE$ therefore $\angle APQ = \angle ADC$. We can also conclude that $\angle AQP = \angle AQF = \angle ABF = \angle ACD$. It follows that the triangles $APQ$ and $ADC$ are similar, and consequently the same holds for the triangles $\Delta A\bar{N}P$ and $\Delta AMD$. Analogously $\Delta B\bar{N}P ∼ \Delta BMC$. Therefore $A\bar{N}/AM = PQ/DC = B\bar{N}/BM$, i.\,e., $A\bar{N}/B\bar{N} = AM/BM$. Moreover, $\angle A\bar{N}B = \angle A\bar{N}P + \angle P\bar{N}B = \angle AMD + \angle BMC$ $= 180^\circ - \angle AMB$, which means that point $\bar{N}$ lies on the circumcircle of $\Delta AMB$. By
+the uniqueness of $N$, we conclude that $\bar{N} = N$, which completes the solution.
 
 \end{enumerate}
 

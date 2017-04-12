@@ -18,7 +18,11 @@
 	\item %China Western Invitational Mathematical Competition 2012
 	\textit{Find the least positive integer $m$ such that for every prime number $p>3$ we have $105 \mid 9^{p^2} -29^p +m$.}
 	
+	Let $m$ be such an integer. Then since $105$ factorises into a product of primes as $3\times 5\times 7$, the given condition is equivalent to the condition that $3$, $5$ and $7$ each divide $9^{p^2} -29^p +m$ for every prime $p>3$.
 	
+	Now $0 \equiv_3 9^{p^2} -29^p +m \equiv_3 -(-1)^p+m = 1+m$ since $p$ is odd, so $m\equiv_3 -1$. Also, $0 \equiv_5 9^{p^2} -29^p +m \equiv_5 (-1)^{p^2} -(-1)^p +m = m$ since $p$ and $p^2$ are odd, so $m\equiv_5 0$. Finally, $0\equiv_7 9^{p^2} -29^p +m \equiv_7 2^{p^2} -1^p +m = 2^{p^2}-1+m$. Now since $p>3$ is prime, $3\nmid p$ and so $p^1 = 3k+1$ for some $k\in\mathbb{Z}$. Thus $2^{p^2} = 2\cdot 8^k \equiv_7 2$, and so $m\equiv_7 -1$.
+	
+	Now our three congruences for $m$ can be combined into one using the method of the Chinese Remainder Theorem. Alternatively, note that $3$, $5$ and $7$ all divide $m-20$, and so $m\equiv_105 20$. So the smallest positive integer value for $m$ is $m=20$.
 	
 	\item
 	\textit{Determine all functions $f: \mathbb{R}\to\mathbb{R}$ such that for all $x,y\in\mathbb{R}$, $$f(xf(x)+f(xy)) = f(x^2) +yf(x).$$}

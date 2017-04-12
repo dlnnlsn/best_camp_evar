@@ -20,10 +20,13 @@
 	
 	
 	
-	
 	\item
 	\textit{Determine all functions $f: \mathbb{R}\to\mathbb{R}$ such that for all $x,y\in\mathbb{R}$, $$f(xf(x)+f(xy)) = f(x^2) +yf(x).$$}
+	We call this original equation King. Note that $f(x)=0$ for all $x\in\mathbb{R}$ is a solution to this equation since both sides of King are simply zero. So from now on we assume that $f$ has takes at least one nonzero value.
 	
+	Setting $x=0$ in King gives that $f(f(0)) = f(0)+yf(0)$. Since the left-hand side is constant the right-hand side is too, and so $f(0)=0$. Now let $e$ be a nonzero real number such that $f(e)\neq0$. Then substituting $e$ for $x$ and $y/e$ for $y$, King becomes $f(ef(e)+f(y)) = f(e^2)+y\times f(e)/e$. From this we see that since $f(e)/e\neq0$, $f$ is both injective and surjective. Then putting $y=0$ in King gives $f(xf(x)) = f(x^2) \iff xf(x)=x^2 \iff f(x)=x$ for all nonzero $x$ since $f$ is injective. Together with $f(0)=0$ this gives that $f(x)=x$ for all $x\in\mathbb{R}$.
+	
+	Substituting this into King we get that both sides become $x^2+xy$, so $f(x)=x$ is in fact a solution to King. Hence our only two solutions are $f(x)=0$ for all $x\in\mathbb{R}$ and $f(x)=x$ for all $x\in\mathbb{R}$.
 	
 	\item %Finnish MO 2014
 	\textit{Determine the greatest positive integer $m$ such that each square of a $m\times m$ array can be painted either red or blue so that not all the squares at the intersection of any two rows and any two columns are the same colour.}
